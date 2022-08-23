@@ -2,14 +2,15 @@ const sendInput = document.querySelector('#input');
 const itemsContainer = document.querySelector('.items');
 
 sendInput.addEventListener('keydown', function(event) {
-    const listItem = sendInput.value;
-    const newItem = document.createElement('div');
 
-    newItem.addEventListener('click', function() {
-        newItem.classList.toggle('done');
-    });
 
     if (event.key == 'Enter') {
+        const listItem = sendInput.value;
+        const newItem = document.createElement('div');
+
+        newItem.addEventListener('click', function() {
+            newItem.classList.toggle('done');
+        });
         newItem.textContent = listItem;
         if (listItem != '') {
             itemsContainer.append(newItem);
